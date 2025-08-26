@@ -119,14 +119,13 @@ Task\_Tracker/
 ## 📊 Screenshots
 
 ### 🔐 Login Page
-![Login Page](images/login.png)
+![Login Page](Task_Tracker/Images/login.png)
 
 ### 📋 Task List
-![Task List](images/Create_task.png)
+![Task List](Task_Tracker/Images/Create_task.png)
 
 ### 📈 Analytics Dashboard
-![Dashboard](images/dashboard.png)
----
+![Dashboard](Task_Tracker/Images/Dashboard.png)
 
 ## 📚 References
 

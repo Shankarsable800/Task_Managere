@@ -1,147 +1,202 @@
-# Task Management System
 
-A modern Task Management System built with **Django**, designed to help users organize their tasks effectively. This software incorporates features such as task creation, authentication, progress tracking, filtering, and a user-friendly interface.
+# 📝 Task Management System (Django + DRF)
 
+A **modern Task Tracking Web Application** built with **Django, Django REST Framework, TailwindCSS, and Chart.js**.
+It helps users manage personal tasks, collaborate with others, track progress, and view analytics.
 
+## 🚀 Features
 
-## Features
+* 🔑 **Authentication System**
 
-### 1. **Authentication System**
-- **User Registration**: New users can register by providing a username, email, and password.
-- **Login/Logout**: Secure user login and logout functionality.
-- **Session Management**: Ensures that authenticated users can securely access their tasks.
+  * Register, Login, Logout (Ref: README-1 & 2)
+  * Session-based security
+* ✅ **Task Management**
 
-### 2. **Task Management**
-- **CRUD Operations**: Users can create, read, update, and delete tasks.
-- **Task Fields**:
-  - Title
-  - Description (optional)
-  - Status: Pending, In Progress, Completed
-  - Due Date
-- **Progress Bar**: Displays task completion status visually.
+  * CRUD Operations (Create, Update, Delete, View)
+  * Fields: Title, Description, Status (Pending/In Progress/Completed), Due Date (Ref: README-1)
+  * File Upload Support (Ref: README-2)
+* 📂 **Task Sharing & Notifications**
 
-### 3. **Search and Filters**
-- **Search**: Users can search for tasks by title.
-- **Filters**: Filter tasks based on:
-  - Status (Pending, In Progress, Completed)
-  - Due Date (Upcoming, Overdue)
+  * Share tasks with other users (Ref: README-2)
+  * Notification system for updates (Ref: README-1 & 2)
+* 📊 **Admin Analytics Dashboard**
 
-### 4. **Dynamic Dashboard**
-- Displays user-specific tasks and their progress.
-- Highlights overdue tasks in red for better visibility.
+  * Task statistics with charts (Ref: README-1 & 2)
+  * Weekly & Monthly trends using Chart.js (Ref: README-2)
+* 🔎 **Search & Filters**
 
-### 5. **Responsive UI**
-- Built with **Tailwind CSS** for a clean and modern design.
-- Mobile-friendly interface ensures accessibility across all devices.
+  * Search tasks by title
+  * Filter tasks by status/due date (Ref: README-1)
+* 🎨 **Responsive UI**
 
-### 6. **Database Integration**
-- **SQLite** is used as the default database.
-- Stores user credentials securely using Django's authentication system.
-- Task data is managed efficiently using Django ORM.
+  * TailwindCSS-based modern design
+  * Mobile-friendly layouts
+* 💾 **Database**
 
----
+  * SQLite (default), supports PostgreSQL/MySQL
+* 🔒 **Authentication**
 
-## API Endpoints
-
-### Authentication Endpoints
-| Endpoint            | Method | Description                          |
-|---------------------|--------|--------------------------------------|
-| `/api/register/`    | POST   | Registers a new user.               |
-| `/api/login/`       | POST   | Authenticates a user and returns a token. |
-| `/api/logout/`      | POST   | Logs out the user.                  |
-
-### Task Endpoints
-| Endpoint              | Method | Description                          |
-|-----------------------|--------|--------------------------------------|
-| `/api/tasks/`         | GET    | Fetch all tasks for the logged-in user. |
-| `/api/tasks/`         | POST   | Create a new task.                  |
-| `/api/tasks/<id>/`    | GET    | Fetch details of a specific task.   |
-| `/api/tasks/<id>/`    | PUT    | Update a specific task.             |
-| `/api/tasks/<id>/`    | DELETE | Delete a specific task.             |
-
-### Search and Filter Endpoints
-| Endpoint                     | Method | Description                         |
-|------------------------------|--------|-------------------------------------|
-| `/api/tasks/search/?q=`      | GET    | Search tasks by title.              |
-| `/api/tasks/filter/?status=` | GET    | Filter tasks by status.             |
-| `/api/tasks/filter/?date=`   | GET    | Filter tasks by due date.           |
+  * Django’s built-in auth system with token support
 
 ---
 
-## Installation
+## 📂 Project Structure 
 
-### Prerequisites
-- Python 3.9 or higher
-- Django 4.2 or higher
-- Node.js and npm (optional, for frontend customization)
+```
+Task_Tracker/
+│── Task_Tracker/        # Main project folder
+│   ├── settings.py
+│   ├── urls.py
+│   └── ...
+│
+│── tasks/               # Application folder
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── serializers.py
+│   ├── forms.py
+│   └── ...
+│
+│── templates/           # HTML templates
+│   ├── base.html
+│   ├── tasks/
+│   │   ├── dashboard.html
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── form.html
+│   │   └── tasklist.html
+│
+│── static/              # Static files
+│   ├── css/form.css
+│   └── js/app.js
+│
+│── manage.py
+```
 
-### Setup
-1. Clone the repository:
+---
+
+## 📡 API Endpoints
+
+### Authentication
+
+| Endpoint         | Method | Description                   |
+| ---------------- | ------ | ----------------------------- |
+| `/api/register/` | POST   | Register a new user           |
+| `/api/login/`    | POST   | Authenticate and return token |
+| `/api/logout/`   | POST   | Logout the user               |
+
+### Tasks
+
+| Endpoint           | Method | Description            |
+| ------------------ | ------ | ---------------------- |
+| `/api/tasks/`      | GET    | Get all tasks for user |
+| `/api/tasks/`      | POST   | Create a new task      |
+| `/api/tasks/<id>/` | GET    | Get task details       |
+| `/api/tasks/<id>/` | PUT    | Update task            |
+| `/api/tasks/<id>/` | DELETE | Delete task            |
+
+### Search & Filter
+
+| Endpoint                     | Method | Description              |
+| ---------------------------- | ------ | ------------------------ |
+| `/api/tasks/search/?q=`      | GET    | Search tasks by title    |
+| `/api/tasks/filter/?status=` | GET    | Filter tasks by status   |
+| `/api/tasks/filter/?date=`   | GET    | Filter tasks by due date |
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone Repository**
+
    ```bash
-   git clone https://github.com/zainnadeem786/Developer-Hub-Task-Management-Task-.git
-   cd task-management
+   git clone https://github.com/your-username/task-tracker.git
+   cd task-tracker
+   ```
 
+2. **Create Virtual Environment**
 
-2. Create a virtual environment:
-  python -m venv .venv
-  source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+   ```
 
-3.  Install dependencies:
-  
-  pip install -r req.txt
+3. **Install Dependencies**
 
-4. Apply migrations:
-   
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Apply Migrations**
+
+   ```bash
    python manage.py makemigrations
    python manage.py migrate
+   ```
 
-5. Start the development server:
-   
+5. **Create Superuser**
+
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+6. **Run Development Server**
+
+   ```bash
    python manage.py runserver
+   ```
+
+7. Visit → [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+---
+
+## 🔑 Default Routes
+
+* Admin Dashboard → `/admin/`
+* User Dashboard → `/dashboard/`
+
+---
+
+## 📊 Screenshots
+
+### 🔐 Login Page
+![Login Page](Images/login.png)
+
+### 📋 Task List
+![Task List](Images/Create_task.png)
+
+### 📈 Analytics Dashboard
+![Dashboard](Images/Dashboard.png)
 
 
-  ## Usage
+---
 
+## 🛠️ Tech Stack
 
-  **Authentication**
+* **Backend**: Django 4.2+ / Django 5, Django REST Framework
+* **Frontend**: HTML, TailwindCSS, JavaScript, Chart.js
+* **Database**: SQLite (default)
+* **Auth**: Django Authentication
 
+---
 
-   Register and log in to access the dashboard.
-   Once logged in, users can create, manage, and track their tasks.
+## 📚 References
 
+* [Django Docs](https://docs.djangoproject.com/)
+* [Django REST Framework](https://www.django-rest-framework.org/)
+* [Tailwind CSS](https://tailwindcss.com/docs)
+* [Chart.js](https://www.chartjs.org/docs/latest/)
 
-  ## Task Operations
+---
 
+## 👨‍💻 Author
 
-  Add a task with a title, description, status, and due date.
-  Update the status as the task progresses.
-  Delete tasks when they are no longer needed.
+Developed by **Shankar Sable**
+📅 June 2025
 
+---
 
-  ## Search and Filter
+✅ Now you have **one professional README** with references to both of your files.
 
-
-  Use the search bar to quickly find tasks by title.
-  Filter tasks by status or due date to manage priorities effectively.
-
-
-  ## Technologies Used
-
-
-  Backend: Python, Javascript, Django
-  Frontend: HTML, CSS, Javascript, Tailwind CSS
-  Database: SQLite (default)
-  Authentication: Django's built-in authentication system
-  API Development: Django REST Framework
-
-
- ## Contribution
-
-  Feel free to fork this repository and create pull requests for any feature improvements or bug fixes. Let's build a better task management system together!
-
-  
-This version includes:
-- **Task Sharing and Notifications**: Details about the endpoints and notifications when tasks are updated or shared.
-- **Admin Dashboard**: Admins have access to an analytics dashboard, which includes task statistics and graphical trends.
-- **Graphical Analytics**: Tasks trends and other analytics are visualized using a graphical interface.
-
+Do you want me to also make a **shorter “lite README” version** (just highlights + setup) for GitHub repo front page, and keep this full one as `README_FULL.md`?
