@@ -161,13 +161,13 @@ Task_Tracker/
 ## 📊 Screenshots
 
 ### 🔐 Login Page
-![Login Page](Images/login.png)
+![Login Demo](Task_Tracker/Images/login.gif)
 
 ### 📋 Task List
-![Task List](Images/Create_task.png)
+![Task Demo](Task_Tracker/Images/Create_task.png)
 
 ### 📈 Analytics Dashboard
-![Dashboard](Images/Dashboard.png)
+![Dashboard Demo](Task_Tracker/Images/Dashboard.png)
 
 
 ---
