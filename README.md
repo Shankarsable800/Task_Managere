@@ -117,6 +117,7 @@ Task\_Tracker/
 ---
 
 ## 📊 Screenshots
+<img width="1826" height="912" alt="Dashboard" src="https://github.com/user-attachments/assets/3aa394c5-5ccf-4e5f-804a-415474f54145" />
 
 ### 🔐 Login Page
 ![Login Page](Task_Tracker/Images/login.png)
