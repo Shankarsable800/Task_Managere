@@ -100,14 +100,14 @@ Task\_Tracker/
 
 ---
 
-## 🔑 Default Credentials
+## 🔑<b> Default Credentials </b>
 
 * Admin Dashboard: `/admin/`
 * User Dashboard: `/dashboard/`
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ <b>Tech Stack</b>
 
 * **Backend**: Django 5, Django REST Framework
 * **Frontend**: HTML, TailwindCSS, Chart.js
@@ -116,12 +116,16 @@ Task\_Tracker/
 
 ---
 
-## 📊 Screenshots (Optional)
+## 📊 Screenshots
 
-* Task List Page
-* Task Creation Form
-* Analytics Dashboard
+### 🔐 Login Page
+![Login Page](images/login.png)
 
+### 📋 Task List
+![Task List](images/Create_task.png)
+
+### 📈 Analytics Dashboard
+![Dashboard](images/dashboard.png)
 ---
 
 ## 📚 References
